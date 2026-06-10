@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>○○君はいつも全力</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#111;
+    overflow:hidden;
+    font-family:sans-serif;
+}
+
+.viewer{
+    display:flex;
+    width:100vw;
+    height:100vh;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+}
+
+.page{
+    flex:0 0 100%;
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    scroll-snap-align:start;
+}
+
+.page img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.nav{
+    position:fixed;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:40px;
+    color:white;
+    background:rgba(0,0,0,0.5);
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+    z-index:10;
+}
+
+.prev{
+    left:10px;
+}
+
+.next{
+    right:10px;
+}
+
+.counter{
+    position:fixed;
+    bottom:10px;
+    right:20px;
+    color:white;
+    background:rgba(0,0,0,0.5);
+    padding:5px 10px;
+    border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="nav prev" onclick="prevPage()">‹</button>
+<button class="nav next" onclick="nextPage()">›</button>
+
+<div class="viewer" id="viewer">
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/w2v2ogmc84v07kmnld9nj/001.png?rlkey=e1sb1g0bq7hr33m8d0uyke7yk&st=3kw8io0a&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/82h72julfik3lbqhqunnu/002.png?rlkey=5h5wv708sq2zgn953jbrsgier&st=mf9iy9wp&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/zj0r57dihnbpi1m201hks/003.png?rlkey=456a18oij860o2qrm7owsssvo&st=3csov32i&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/nwf0x7qexyhw67za1hgb1/004.png?rlkey=4jf4uww2r7i47qsg8pvx2vsuh&st=1cer2bdo&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/3zcd68siet9a5tuc2gcxq/005.png?rlkey=91juqgn4tn5gjjhgfgb920or3&st=kr5rvn01&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/2hsr8emwg46xgfwoq85gq/006.png?rlkey=4xipxe2y3wlfinph6woyp1h94&st=0odov3ds&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/b8q6wbz98g8xvt7wvsg0a/006.1.png?rlkey=yg24vvwjnlochq9xkel2u55hk&st=l918qoub&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/789q7axfo3dayl5mffjh4/006.2.png?rlkey=s875tlsbv0uzfe8mayn8g5lm7&st=aj8a7hqr&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/wso9pahevcmr46q2183uo/007.png?rlkey=fw4940svpcywsnv1p48f07ptr&st=i6sc2bvu&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/uhnvokbuufvyeudku0uvl/008.png?rlkey=dnjr1itdiw1bg130pnkhmgpis&st=0x309ljy&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/7g7c1x2e8mbq3i28wk9zx/009.png?rlkey=z21p6p43y7r9paj3j8vp0sbja&st=us7j9wtf&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/ojzfda5k5v2ac659cl6ij/010.png?rlkey=21mshkllv0f5zr9wwdfkmuhlc&st=tsyvtscd&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/mjuh3llkd7wvy0jegby7w/011.png?rlkey=y0c63xfutyi9gh86das71elhw&st=4qtinbfc&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/zv59zbeglztolqpr9iqqc/012.png?rlkey=f3nfb8xxfssuabyeq2lkfi545&st=26iso4og&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/gk01e9qqpelnzrfvphf05/013.png?rlkey=fjuf3iqxavub2jpesytfn9l0m&st=k9ecs7rk&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/b0ocm4j8eaoaa8saqebps/014.png?rlkey=lno084vppi7lx9r3an2ykij8l&st=6ktu6kpn&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/upj3gdabjscjwokqrigg5/015.png?rlkey=4tov6oq3pvk7098xjrq8tctpk&st=4wq4ka8c&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/6j4z2d8zpuwlsns85h36a/016.png?rlkey=k2qm9n0m5vyv2o1ke06l95qwp&st=mmkbgw8q&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/5huuruwbc2t3b9uw4aldb/017.png?rlkey=umc2lgz0vzt2le850zurt0x6n&st=a25y56ot&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/g2lec9bava5kod1ndzk4u/018.png?rlkey=aze0eq01et012xg7hcw28hfgk&st=69flbvq3&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/3o4v3jyxoxs52ahnpy45t/019.png?rlkey=pmaq5q080ifsq9vcvda4op4nn&st=5zuqrkpk&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/rv56izv6ic90q2ugney3g/020.png?rlkey=yiy1vcsu3jxc2ru5fnlzxz7jd&st=drfj1wca&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/uo5riqzahfdv6t5651w5t/021.png?rlkey=u9biry76u4le62v6m4o6yag33&st=zha9pgo4&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/kzeiadngw9yitzxfvhy73/022.png?rlkey=niit91t9c258kd3137ky0ss49&st=yymjf7h8&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/0flm7llvci0zhs0psmnpq/023.png?rlkey=9gj7bje8f2vmi6a12thvd4kob&st=s3fdb4ue&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/prozaeduhmu1iflrbqtcl/024.png?rlkey=4emzc8jq1n24lsyzb0wd9wr81&st=uzq2bkl1&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/fqt483e2rqraq831gz0ea/025.png?rlkey=q0igsn95m2aj5bfv8kmklt3x3&st=dawom545&raw=1">
+    </div>
+
+    <div class="page">
+        <img src="https://www.dropbox.com/scl/fi/8lgx4t6vhcwvdh0r077yi/026.png?rlkey=bfvf8sip6ah6uupn6qla7071s&st=f3t5l6ik&raw=1">
+    </div>
+
+</div>
+
+<div class="counter" id="counter">
+1 / 3
+</div>
+
+<script>
+
+const viewer = document.getElementById("viewer");
+const counter = document.getElementById("counter");
+
+const total = document.querySelectorAll(".page").length;
+
+function updateCounter(){
+    const page =
+        Math.round(viewer.scrollLeft / window.innerWidth) + 1;
+
+    counter.textContent = `${page} / ${total}`;
+}
+
+function nextPage(){
+    viewer.scrollBy({
+        left:window.innerWidth,
+        behavior:"smooth"
+    });
+}
+
+function prevPage(){
+    viewer.scrollBy({
+        left:-window.innerWidth,
+        behavior:"smooth"
+    });
+}
+
+viewer.addEventListener("scroll", updateCounter);
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="ArrowRight"){
+        nextPage();
+    }
+
+    if(e.key==="ArrowLeft"){
+        prevPage();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
